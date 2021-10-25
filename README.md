@@ -1,6 +1,6 @@
 # Backend-Home Loans C
 
-Projek akhir ini adalah syarat lulus pada pelatihan DTS Kemkominfo - IT Perbankan kelas Backend
+Projek akhir ini adalah syarat lulus pada pelatihan DTS Kemkominfo - IT Perbankan kelas Backend. Projek akhir ini dikerjakan oleh sebuah tim yang beranggotakan 4 orang.
 
 ## Hasil akhir
 
