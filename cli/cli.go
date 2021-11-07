@@ -9,7 +9,6 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/rs/cors"
 	"github.com/rysmaadit/go-template/app"
 	"github.com/rysmaadit/go-template/contract"
 	"github.com/rysmaadit/go-template/external/mysql"
@@ -29,11 +28,6 @@ func NewCli(args []string) *Cli {
 }
 
 func (c *Cli) Run(application *app.Application) {
-	cors := cors.New(cors.Options{
-		AllowedOrigins: []string{"*"},                                       // All origins
-		AllowedMethods: []string{"GET", "OPTIONS", "POST", "PUT", "DELETE"}, // Allowing only get, just an example
-	})
-
 	log.SetLevel(log.InfoLevel)
 	log.StandardLogger()
 	log.SetOutput(os.Stdout)
@@ -46,7 +40,7 @@ func (c *Cli) Run(application *app.Application) {
 
 	srv := &http.Server{
 		Addr:    fmt.Sprintf(":%v", application.Config.AppPort),
-		Handler: cors.Handler(router.NewRouter(service.InstantiateDependencies(application))),
+		Handler: router.NewRouter(service.InstantiateDependencies(application)),
 	}
 
 	log.Println(fmt.Sprintf("starting application { %v } on port :%v", application.Config.AppName, application.Config.AppPort))
