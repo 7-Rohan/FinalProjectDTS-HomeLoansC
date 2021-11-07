@@ -1,1 +1,1 @@
-web: ./bin/dres-homeloansc/
+web: ./bin/fpdts-home-loansc/
