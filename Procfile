@@ -1,1 +1,0 @@
-web: ./bin/fpdts-home-loansc/
